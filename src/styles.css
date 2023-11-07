@@ -14,31 +14,31 @@ html {
 
 /* Desktop screen */
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
 
     .background-image {
         background-image: url('images/rizky-subagja-1k7TnX5GAww-unsplash.jpg');
-    }
-    
-    .menu {
-        background-color: rgba(0, 0, 0, 0.400);
-        height: 100%;
-        backdrop-filter: blur(3px);
-        z-index: 1;
-        box-shadow: 1px 0px 3px 0px rgba(20,20,20,0.6);
     }
 
     #main {
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 2.5fr;
+        grid-template-columns: 300px 1fr;
+        position: relative;
     }
 
     .menu {
+        background-color: rgba(0, 0, 0, 0.400);
+        backdrop-filter: blur(3px);
+        z-index: 2;
+        box-shadow: 1px 0px 3px 0px rgba(20,20,20,0.6);
         display: flex;
         align-items: center;
         /* flex-direction: column; */
         justify-content: center;
+        position: fixed;
+        height: 100%;
+        width: 300px;
     }
 
     .menu-item {
@@ -47,13 +47,14 @@ html {
         display: block;
         text-decoration: none;
         padding: clamp(0.50rem, 1vw, 2rem) 0rem;
+        /* padding: 50px; */
         transition: opacity 400ms ease;
     }
     
     .menu-items {
         margin-left: clamp(1rem, 3vw, 8rem);
         position: relative;
-        z-index: 2;
+        z-index: 3;
         width: 100%;
     }
     
@@ -75,12 +76,12 @@ html {
         );
         
         background-position: 0% 0%;
-        background-size: 10vmin 10vmin;
+        background-size: 9vmin 9vmin;
     
         position: absolute;
         left: 0px;
         top: 0px;
-        z-index: 1;
+        z-index: 2;
         transition: opacity 800ms ease, 
                     background-size 800ms ease,
                     background-position 800ms ease;
@@ -137,26 +138,46 @@ html {
     
     .menu:hover ~ .background-image {
         background-size: 100vmax;
-        opacity: 0.80;
+        opacity: 0.30;
         transition: opacity 800ms ease,
         background-size 800ms ease,
         background-position 800ms ease;
+    }
+
+    .content {
+        display: grid;
+        justify-content: center;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        grid-template-columns: 1fr;
+        /* margin-left: minmax(300px, 1fr); */
+        grid-template-rows: 1fr 9fr;
     }
 
     .menu-logo {
         background-image: url('images/Screenshot_2023-11-07_at_4.51.02_PM-removebg-preview.png');
         background-size: contain;
         background-repeat: no-repeat;
+        background-position: center;
 
         z-index: 1;
         height: max(10%, 50px);
-        width: 30%;
+        width: 40%;
         position: fixed;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        justify-self: center;
+        border-bottom: 0.5px white solid;
     }
 
-    .content {
-        display: flex;
-        justify-content: center;
+    .content-container {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        padding: 100px 20px 100px 20px;
+        color: white;
+        z-index: 2;
+        width: 500px;
+        justify-self: center;
     }
     
 }
@@ -164,7 +185,7 @@ html {
 
 /* Mobile screen */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
     .background-image {
         background-image: url('images/rizky-subagja-1k7TnX5GAww-unsplash.jpg');
@@ -196,6 +217,12 @@ body {
     background-size: 110vmax;
     background-repeat: no-repeat;
 
-    /* opacity: 0.9; */
+    opacity: 0.5;
+    filter: blur(0px);
 }
 
+p {
+    font-size: clamp(1rem, 2vw, 4rem);
+    line-height: 50px;
+    text-align: center;
+}

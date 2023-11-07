@@ -22,6 +22,23 @@ const menuLogo = document.createElement('div');
 menuLogo.classList.add('menu-logo');
 content.append(menuLogo);
 
+const contentContainer = document.createElement('div');
+contentContainer.classList.add('content-container');
+content.append(contentContainer);
+
+const contentContainerHome = document.createElement('div');
+contentContainerHome.classList.add('home');
+contentContainer.append(contentContainerHome);
+
+
+const p1 = document.createElement('p');
+p1.textContent = "Welcome to our coffee realm. We're all about exceptional brews and straightforward service. From dark to light roasts, we cater to diverse tastes. No frills, just great coffee in a relaxed setting."
+contentContainerHome.append(p1);
+
+const p2 = document.createElement('p');
+p2.textContent = "Join us for a taste of the coffee world."
+contentContainerHome.append(p2);
+
 const menuItems = document.createElement('div');
 menuItems.classList.add('menu-items');
 menu.append(menuItems);
