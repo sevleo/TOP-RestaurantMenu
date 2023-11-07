@@ -32,7 +32,7 @@ contentContainer.append(contentContainerHome);
 
 
 const p1 = document.createElement('p');
-p1.textContent = "Welcome to our coffee realm. We're all about exceptional brews and straightforward service. From dark to light roasts, we cater to diverse tastes. No frills, just great coffee in a relaxed setting."
+p1.textContent = "Welcome to our coffee realm. We're all about exceptional brews and straightforward service. From dark to light roasts, we cater to diverse tastes."
 contentContainerHome.append(p1);
 
 const p2 = document.createElement('p');

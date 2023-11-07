@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Lato:wght@100&family=Roboto:wght@100&family=Rubik:wght@300&display=swap');
+
 /* General styles */
 
 * {
@@ -7,8 +9,7 @@
 }
 
 html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
+    font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -43,7 +44,7 @@ html {
 
     .menu-item {
         color: white;
-        font-size: clamp(1rem, 2vw, 4rem);
+        font-size: clamp(1rem, 2.5vw, 4rem);
         display: block;
         text-decoration: none;
         padding: clamp(0.50rem, 1vw, 2rem) 0rem;
@@ -179,6 +180,29 @@ html {
         width: 500px;
         justify-self: center;
     }
+
+    .home {
+    padding: 15px;
+    --b: 0.5px; /* thickness of the border */
+    --c: rgb(255, 255, 255); /* color of the border */
+    --w: 100px; /* width of border */
+    
+    border: var(--b) solid #0000;
+    --_g: #0000 90deg,var(--c) 0;
+    --_p: var(--w) var(--w) border-box no-repeat;
+    background:
+        conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
+        conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
+        conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
+        conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+        
+        background-color: rgba(20, 20, 20, 0.7);
+    }
+
+    .home p:first-child {
+    margin-bottom: 10px;
+    }
+
     
 }
 
