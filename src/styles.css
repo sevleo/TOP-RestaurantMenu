@@ -44,16 +44,19 @@ html {
 
     .menu-item {
         color: white;
-        font-size: clamp(1rem, 2.5vw, 4rem);
+        /* font-size: clamp(1rem, 2.5vw, 4rem); */
+        font-size: 35px;
         display: block;
         text-decoration: none;
-        padding: clamp(0.50rem, 1vw, 2rem) 0rem;
+        /* padding: clamp(0.50rem, 1vw, 2rem) 0rem; */
+        padding: 10px;
         /* padding: 50px; */
         transition: opacity 400ms ease;
     }
     
     .menu-items {
-        margin-left: clamp(1rem, 3vw, 8rem);
+        /* margin-left: clamp(1rem, 3vw, 8rem); */
+        margin-left: 35px;
         position: relative;
         z-index: 3;
         width: 100%;
@@ -196,14 +199,12 @@ html {
         conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
         conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
         
-        background-color: rgba(20, 20, 20, 0.7);
+        background-color: rgba(20, 20, 20, 0.8);
     }
 
     .home p:first-child {
     margin-bottom: 10px;
     }
-
-    
 }
 
 
@@ -247,6 +248,7 @@ body {
 
 p {
     font-size: clamp(1rem, 2vw, 4rem);
+    /* font-weight: 500; */
     line-height: 50px;
     text-align: center;
 }
