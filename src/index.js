@@ -18,6 +18,10 @@ const backgroundImage = document.createElement('div');
 backgroundImage.classList.add('background-image');
 main.append(backgroundImage);
 
+const menuLogo = document.createElement('div');
+menuLogo.classList.add('menu-logo');
+content.append(menuLogo);
+
 const menuItems = document.createElement('div');
 menuItems.classList.add('menu-items');
 menu.append(menuItems);
