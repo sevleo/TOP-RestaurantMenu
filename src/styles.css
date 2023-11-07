@@ -44,7 +44,7 @@ html {
         font-size: clamp(2rem, 3vw, 4rem);
         display: block;
         text-decoration: none;
-        padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+        padding: clamp(0.50rem, 1vw, 2rem) 0rem;
         transition: opacity 400ms ease;
     }
     
