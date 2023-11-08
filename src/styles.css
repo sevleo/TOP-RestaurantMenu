@@ -29,10 +29,10 @@ html {
     }
 
     .menu {
-        background-color: rgba(0, 0, 0, 0.400);
+        background-color: rgba(0, 0, 0, 0.200);
         backdrop-filter: blur(3px);
         z-index: 2;
-        box-shadow: 1px 0px 3px 0px rgba(20,20,20,0.6);
+        box-shadow: 1px 0px 3px 0px rgba(20,20,20,0.2);
         display: flex;
         align-items: center;
         /* flex-direction: column; */
@@ -63,7 +63,7 @@ html {
     }
     
     .menu:hover .menu-item {
-        opacity: 0.3;
+        opacity: 0.5;
     }
     
     .menu:hover .menu-item:hover {
@@ -80,7 +80,7 @@ html {
         );
         
         background-position: 0% 0%;
-        background-size: 9vmin 9vmin;
+        background-size: 9.5vmin 9.5vmin;
     
         position: absolute;
         left: 0px;
@@ -92,8 +92,8 @@ html {
     }
     
     .menu:hover > .menu-background-pattern {
-        background-size: 12vmin 12vmin;
-        opacity: 0.5;
+        background-size: 12.5vmin 12.5vmin;
+        opacity: 0.7;
     }
     
     .menu[data-active-index="0"] > .menu-background-pattern {
@@ -142,7 +142,7 @@ html {
     
     .menu:hover ~ .background-image {
         background-size: 100vmax;
-        opacity: 0.30;
+        opacity: 0.50;
         transition: opacity 800ms ease,
         background-size 800ms ease,
         background-position 800ms ease;
@@ -242,7 +242,7 @@ body {
     background-size: 110vmax;
     background-repeat: no-repeat;
 
-    opacity: 0.5;
+    opacity: 0.75;
     filter: blur(0px);
 }
 
