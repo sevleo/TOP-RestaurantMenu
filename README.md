@@ -1,8 +1,7 @@
-git init
-git commit -m "first commit"
-git branch -M main
-git remote add origin git@github.com:sevleo/project_name.git
-git push -u origin main
+change content-container to flex and align child elements in center
+add list of objects to store information about products
+create function to create div elements and iterate through the list to create all the elements
+
 
 
 Background image credit:

@@ -206,9 +206,12 @@ html {
         padding: clamp(10px, 15vh, 100px) 20px 10px 20px;
         color: white;
         z-index: 2;
-        width: 500px;
+        width: 80%;
+        max-width: 700px;
         justify-self: center;
+        display: flex;
     }
+
 
     .content-container > div {
         /* width: 400px; */
@@ -218,6 +221,7 @@ html {
         box-shadow: 0px 0px 100px 50px rgba(20,20,20,1);
         /* box-shadow: inset 0px 0px 100px 100px rgba(20,20,20,0.7),
                     0px 0px 100px 100px rgba(20,20,20,0.7); */
+        height: fit-content;
     }
 
     .content-container > div.hide {
