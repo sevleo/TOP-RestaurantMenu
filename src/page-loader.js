@@ -171,13 +171,17 @@ function generateDOM() {
             contentContainerContactUs.classList.add('contact-us', 'hide');
             contentContainer.append(contentContainerContactUs);
             
-            const p1 = document.createElement('p');
-            p1.textContent = "Duis consequat tellus eu metus finibus, a posuere magna hendrerit."
-            contentContainerContactUs.append(p1);
-            
             const p2 = document.createElement('p');
-            p2.textContent = "Vestibulum ullamcorper, augue rhoncus tempor sollicitudin, justo massa maximus orci, eget suscipit magna nulla nec mi. Mauris efficitur felis a suscipit posuere. Pellentesque efficitur diam odio, nec finibus dui blandit nec. Nulla quis nisi sit amet velit tincidunt volutpat eu vel ligula."
+            p2.textContent = "Sev Leo"
             contentContainerContactUs.append(p2);
+
+            const p3 = document.createElement('p');
+            p3.textContent = "seva.leonov@hotmail.com"
+            contentContainerContactUs.append(p3);
+
+            const p4 = document.createElement('p');
+            p4.textContent = "https://github.com/sevleo"
+            contentContainerContactUs.append(p4);
 
             deleteHomeDiv();
             deleteShopDiv();
