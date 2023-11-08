@@ -6,16 +6,16 @@ function generateDOM() {
     main.id = 'main';
     body.append(main);
 
-    // Background image
-    const backgroundImage = document.createElement('div');
-    backgroundImage.classList.add('background-image');
-    main.append(backgroundImage);
-
     // Menu div
     const menu = document.createElement('div');
     menu.classList.add('menu');
     main.append(menu);
     
+    // Background image
+    const backgroundImage = document.createElement('div');
+    backgroundImage.classList.add('background-image');
+    main.append(backgroundImage);
+
     const menuBackgroundPattern = document.createElement('div');
     menuBackgroundPattern.classList.add('menu-background-pattern');
     menu.append(menuBackgroundPattern);
@@ -29,10 +29,7 @@ function generateDOM() {
     menuItem1.textContent = 'Home';
     menuItems.append(menuItem1);
     menuItem1.addEventListener('click', () => {
-        showHome();
-        hideShop();
-        hideAbout();
-        hideContactUs();
+        createHomeDiv();
     })
     
     const menuItem2 = document.createElement('div');
@@ -40,10 +37,7 @@ function generateDOM() {
     menuItem2.textContent = 'Shop';
     menuItems.append(menuItem2);
     menuItem2.addEventListener('click', () => {
-        hideHome();
-        showShop();
-        hideAbout();
-        hideContactUs();
+        createShopDiv();
     })
     
     const menuItem3 = document.createElement('div');
@@ -51,10 +45,7 @@ function generateDOM() {
     menuItem3.textContent = 'About';
     menuItems.append(menuItem3);
     menuItem3.addEventListener('click', () => {
-        hideHome();
-        hideShop();
-        showAbout();
-        hideContactUs();
+        createAboutDiv();
     })
     
     const menuItem4 = document.createElement('div');
@@ -62,10 +53,7 @@ function generateDOM() {
     menuItem4.textContent = 'Contact Us';
     menuItems.append(menuItem4);
     menuItem4.addEventListener('click', () => {
-        hideHome();
-        hideShop();
-        hideAbout();
-        showContactUs();
+        createContactUsDiv();
     })
     
     Array.from(document.getElementsByClassName('menu-item')).forEach((item, index) => {
@@ -87,97 +75,136 @@ function generateDOM() {
     contentContainer.classList.add('content-container');
     content.append(contentContainer);
     
-    // Home div
-    const contentContainerHome = document.createElement('div');
-    contentContainerHome.classList.add('home');
-    contentContainer.append(contentContainerHome);
-    
-    const p1 = document.createElement('p');
-    p1.textContent = "Welcome to our coffee realm. We're all about exceptional brews and straightforward service. From dark to light roasts, we cater to diverse tastes."
-    contentContainerHome.append(p1);
-    
-    const p2 = document.createElement('p');
-    p2.textContent = "Join us for a taste of the coffee world."
-    contentContainerHome.append(p2);
+    createHomeDiv();
 
-    // Shop div
-    const contentContainerShop = document.createElement('div');
-    contentContainerShop.classList.add('shop', 'hide');
-    contentContainer.append(contentContainerShop);
-    
-    const p3 = document.createElement('p');
-    p3.textContent = "Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis."
-    contentContainerShop.append(p3);
-    
-    const p4 = document.createElement('p');
-    p4.textContent = "Sed posuere arcu ac lectus condimentum condimentum."
-    contentContainerShop.append(p4);
+    function createHomeDiv() {
+        const contentContainerHome = document.querySelector('.home');
+        if (!contentContainerHome) {
+            const contentContainerHome = document.createElement('div');
+            contentContainerHome.classList.add('home', 'hide');
+            contentContainer.append(contentContainerHome);
+            
+            const p1 = document.createElement('p');
+            p1.textContent = "Welcome to our coffee realm. We're all about exceptional brews and straightforward service. From dark to light roasts, we cater to diverse tastes."
+            contentContainerHome.append(p1);
+            
+            const p2 = document.createElement('p');
+            p2.textContent = "Join us for a taste of the coffee world."
+            contentContainerHome.append(p2);
 
-    // About div
-    const contentContainerAbout = document.createElement('div');
-    contentContainerAbout.classList.add('about', 'hide');
-    contentContainer.append(contentContainerAbout);
-    
-    const p5 = document.createElement('p');
-    p5.textContent = "Etiam a mi quam."
-    contentContainerAbout.append(p5);
-    
-    const p6 = document.createElement('p');
-    p6.textContent = "Nullam vehicula ultrices nunc vitae condimentum. Sed scelerisque facilisis dolor, id semper magna bibendum ornare."
-    contentContainerAbout.append(p6);
+            deleteShopDiv();
+            deleteAboutDiv();
+            deleteContactUsDiv();
 
-    // Contact Us div
-    const contentContainerContactUs = document.createElement('div');
-    contentContainerContactUs.classList.add('contact-us', 'hide');
-    contentContainer.append(contentContainerContactUs);
-    
-    const p7 = document.createElement('p');
-    p7.textContent = "Duis consequat tellus eu metus finibus, a posuere magna hendrerit."
-    contentContainerContactUs.append(p7);
-    
-    const p8 = document.createElement('p');
-    p8.textContent = "Vestibulum ullamcorper, augue rhoncus tempor sollicitudin, justo massa maximus orci, eget suscipit magna nulla nec mi. Mauris efficitur felis a suscipit posuere. Pellentesque efficitur diam odio, nec finibus dui blandit nec. Nulla quis nisi sit amet velit tincidunt volutpat eu vel ligula."
-    contentContainerContactUs.append(p8);
-}
+            setTimeout(() => {
+                contentContainerHome.classList.remove('hide');
+            }, 0);
+        }
+    }
 
-function hideHome() {
-    const home = document.querySelector('.home');
-    home.classList.add('hide');
-}
+    function createShopDiv() {
+        const contentContainerShop = document.querySelector('.shop');
+        if (!contentContainerShop) {
+            const contentContainerShop = document.createElement('div');
+            contentContainerShop.classList.add('shop', 'hide');
+            contentContainer.append(contentContainerShop);
+            
+            const p1 = document.createElement('p');
+            p1.textContent = "Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis."
+            contentContainerShop.append(p1);
+            
+            const p2 = document.createElement('p');
+            p2.textContent = "Sed posuere arcu ac lectus condimentum condimentum."
+            contentContainerShop.append(p2);
 
-function showHome() {
-    const home = document.querySelector('.home');
-    home.classList.remove('hide');
-}
+            deleteHomeDiv();
+            deleteAboutDiv();
+            deleteContactUsDiv();
 
-function hideShop() {
-    const home = document.querySelector('.shop');
-    home.classList.add('hide');
-}
+            setTimeout(() => {
+                contentContainerShop.classList.remove('hide');
+            }, 0);
+        }
+    }
 
-function showShop() {
-    const home = document.querySelector('.shop');
-    home.classList.remove('hide');
-}
+    function createAboutDiv() {
+        const contentContainerAbout = document.querySelector('.about');
+        if (!contentContainerAbout) {
+            const contentContainerAbout = document.createElement('div');
+            contentContainerAbout.classList.add('about', 'hide');
+            contentContainer.append(contentContainerAbout);
+            
+            const p1 = document.createElement('p');
+            p1.textContent = "Etiam a mi quam."
+            contentContainerAbout.append(p1);
+            
+            const p2 = document.createElement('p');
+            p2.textContent = "Nullam vehicula ultrices nunc vitae condimentum. Sed scelerisque facilisis dolor, id semper magna bibendum ornare."
+            contentContainerAbout.append(p2);
 
-function hideAbout() {
-    const home = document.querySelector('.about');
-    home.classList.add('hide');
-}
+            deleteHomeDiv();
+            deleteShopDiv();
+            deleteContactUsDiv();
 
-function showAbout() {
-    const home = document.querySelector('.about');
-    home.classList.remove('hide');
-}
+            setTimeout(() => {
+                contentContainerAbout.classList.remove('hide');
+            }, 0);
+        }
+    }
 
-function hideContactUs() {
-    const home = document.querySelector('.contact-us');
-    home.classList.add('hide');
-}
+    function createContactUsDiv() {
+        const contentContainerContactUs = document.querySelector('.contact-us');
+        if (!contentContainerContactUs) {
+            const contentContainerContactUs = document.createElement('div');
+            contentContainerContactUs.classList.add('contact-us', 'hide');
+            contentContainer.append(contentContainerContactUs);
+            
+            const p1 = document.createElement('p');
+            p1.textContent = "Duis consequat tellus eu metus finibus, a posuere magna hendrerit."
+            contentContainerContactUs.append(p1);
+            
+            const p2 = document.createElement('p');
+            p2.textContent = "Vestibulum ullamcorper, augue rhoncus tempor sollicitudin, justo massa maximus orci, eget suscipit magna nulla nec mi. Mauris efficitur felis a suscipit posuere. Pellentesque efficitur diam odio, nec finibus dui blandit nec. Nulla quis nisi sit amet velit tincidunt volutpat eu vel ligula."
+            contentContainerContactUs.append(p2);
 
-function showContactUs() {
-    const home = document.querySelector('.contact-us');
-    home.classList.remove('hide');
+            deleteHomeDiv();
+            deleteShopDiv();
+            deleteAboutDiv();
+
+            setTimeout(() => {
+                contentContainerContactUs.classList.remove('hide');
+            }, 0);
+        }
+
+    }
+
+    function deleteHomeDiv() {
+        const contentContainerHome = document.querySelector('.home');
+        if (contentContainerHome) {
+            contentContainerHome.remove();
+        }
+    }
+
+    function deleteShopDiv() {
+        const contentContainerShop = document.querySelector('.shop');
+        if (contentContainerShop) {
+            contentContainerShop.remove();
+        }
+    }
+
+    function deleteAboutDiv() {
+        const contentContainerAbout = document.querySelector('.about');
+        if (contentContainerAbout) {
+            contentContainerAbout.remove();
+        }
+    }
+
+    function deleteContactUsDiv() {
+        const contentContainerContactUs = document.querySelector('.contact-us');
+        if (contentContainerContactUs) {
+            contentContainerContactUs.remove();
+        }
+    }
 }
 
 
