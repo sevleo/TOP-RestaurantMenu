@@ -121,13 +121,26 @@ function generateDOM() {
             contentContainerShop.classList.add('shop', 'hide');
             contentContainer.append(contentContainerShop);
             
-            const p1 = document.createElement('p');
-            p1.textContent = "Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis. Donec nec aliquam elit. Donec vitae condimentum magna, in iaculis quam. Duis laoreet nibh vitae purus tincidunt iaculis."
-            contentContainerShop.append(p1);
-            
-            const p2 = document.createElement('p');
-            p2.textContent = "Sed posuere arcu ac lectus condimentum condimentum."
-            contentContainerShop.append(p2);
+            const productItem1 = document.createElement('div');
+            productItem1.classList.add('product-item');
+            contentContainerShop.append(productItem1);
+
+            const productName = document.createElement('div');
+            productName.classList.add('product-item-name');
+            productItem1.append(productName);
+
+            const productPicture = document.createElement('div');
+            productPicture.classList.add('product-item-picture');
+            productItem1.append(productPicture);
+
+            const imageElement = document.createElement('img');
+            imageElement.src = 'images/americano.jpg'
+            productPicture.append(imageElement);
+
+            const productPrice = document.createElement('div');
+            productPrice.classList.add('product-item-price');
+            productItem1.append(productPrice);
+        
 
             deleteHomeDiv();
             deleteAboutDiv();

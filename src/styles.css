@@ -252,6 +252,20 @@ html {
     margin-bottom: 30px;
     }
 
+    .product-item-picture {
+        width: 350px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .product-item-picture img {
+        max-width: 100%;
+        max-height: 100%;
+
+        width: auto;
+        height: auto;
+    }
+
 }
 
 
