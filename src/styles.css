@@ -52,6 +52,7 @@ html {
         padding: 10px;
         /* padding: 50px; */
         transition: opacity 400ms ease;
+        cursor: pointer;
     }
     
     .menu-items {
@@ -175,6 +176,7 @@ html {
     }
 
     .content-container {
+        position: relative;
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         padding: 100px 20px 100px 20px;
@@ -184,7 +186,20 @@ html {
         justify-self: center;
     }
 
-    .home {
+    .content-container > div {
+        /* width: 400px; */
+        transition: all 1s ease-out;
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    .content-container > div.hide {
+        opacity: 0;
+        /* transform: translateX(200%); */
+    }
+
+    .content-container > div {
+    position: absolute;
     padding: 15px;
     --b: 0.5px; /* thickness of the border */
     --c: rgb(255, 255, 255); /* color of the border */
@@ -225,6 +240,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgba(20, 20, 20);
+    overflow-x: hidden;
 }
 
 #main {
