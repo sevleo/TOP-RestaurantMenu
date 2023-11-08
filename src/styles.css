@@ -35,8 +35,8 @@ html {
         box-shadow: 1px 0px 3px 0px rgba(20,20,20,0.2);
         display: flex;
         align-items: center;
-        /* flex-direction: column; */
-        justify-content: center;
+        flex-direction: column;
+        justify-content: start;
         position: fixed;
         height: 100%;
         width: 300px;
@@ -58,9 +58,17 @@ html {
     .menu-items {
         /* margin-left: clamp(1rem, 3vw, 8rem); */
         margin-left: 35px;
+        margin-bottom: 25px;
         position: relative;
         z-index: 3;
         width: 100%;
+    }
+
+    /* Placeholder to create offset on menu tab to align menu-items with content-containers */
+    .placeholder {
+        height: 180px;
+        width: 100%;
+        flex-shrink: 1;
     }
     
     .menu:hover .menu-item {
@@ -179,7 +187,7 @@ html {
         position: relative;
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-        padding: 50px 20px 100px 20px;
+        padding: 100px 20px 100px 20px;
         color: white;
         z-index: 2;
         width: 500px;
@@ -188,10 +196,10 @@ html {
 
     .content-container > div {
         /* width: 400px; */
-        transition: all 1s ease-out;
+        transition: opacity 1s ease-out;
         opacity: 1;
         transform: translateX(0%);
-        /* box-shadow: 0px 0px 100px 50px rgba(20,20,20,1); */
+        box-shadow: 0px 0px 100px 50px rgba(20,20,20,1);
     }
 
     .content-container > div.hide {
@@ -223,7 +231,7 @@ html {
     }
 
     .home p:first-child {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     }
 }
 

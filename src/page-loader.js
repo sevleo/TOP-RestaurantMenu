@@ -20,6 +20,10 @@ function generateDOM() {
     menuBackgroundPattern.classList.add('menu-background-pattern');
     menu.append(menuBackgroundPattern);
 
+    const placeholder = document.createElement('div');
+    placeholder.classList.add('placeholder');
+    menu.append(placeholder);
+
     const menuItems = document.createElement('div');
     menuItems.classList.add('menu-items');
     menu.append(menuItems);
@@ -34,7 +38,7 @@ function generateDOM() {
     
     const menuItem2 = document.createElement('div');
     menuItem2.classList.add('menu-item');
-    menuItem2.textContent = 'Shop';
+    menuItem2.textContent = 'Menu';
     menuItems.append(menuItem2);
     menuItem2.addEventListener('click', () => {
         createShopDiv();
@@ -85,12 +89,20 @@ function generateDOM() {
             contentContainer.append(contentContainerHome);
             
             const p1 = document.createElement('p');
-            p1.textContent = "Welcome to our coffee realm. We're all about exceptional brews and straightforward service. From dark to light roasts, we cater to diverse tastes."
+            p1.textContent = "Welcome to our coffee realm"
             contentContainerHome.append(p1);
-            
+
             const p2 = document.createElement('p');
-            p2.textContent = "Join us for a taste of the coffee world."
+            p2.textContent = "Working hours:"
             contentContainerHome.append(p2);
+
+            const p3 = document.createElement('p');
+            p3.textContent = "Monday - Friday: 6am - 5pm"
+            contentContainerHome.append(p3);
+
+            const p4 = document.createElement('p');
+            p4.textContent = "Saturday - Sunday 8am - 4pm"
+            contentContainerHome.append(p4);
 
             deleteShopDiv();
             deleteAboutDiv();
