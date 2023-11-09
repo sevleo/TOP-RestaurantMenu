@@ -1,3 +1,43 @@
+const productDetails = {
+    image: 'images/americano.jpg',
+    name: 'Americano',
+    price: '$2',
+}
+
+
+const products = [
+    {
+        image: 'images/americano.jpg',
+        name: 'Americano',
+        price: '$2',
+    },
+    {
+        image: 'images/chocolate_coffee.jpg',
+        name: 'Chocolate Coffee',
+        price: '$3',
+    },
+    {
+        image: 'images/ice_espresso.jpg',
+        name: 'Ice Espresso',
+        price: '$3',
+    },
+    {
+        image: 'images/latte.jpg',
+        name: 'Hot Latte',
+        price: '$3',
+    },
+    {
+        image: 'images/sandwich.jpg',
+        name: 'Ham Sandwich',
+        price: '$3',
+    },
+    {
+        image: 'images/croissant.jpg',
+        name: 'Croissant',
+        price: '$3',
+    }
+]
+
 function generateDOM() {
 
     // Body and main div
@@ -121,34 +161,12 @@ function generateDOM() {
             contentContainerShop.classList.add('shop', 'hide');
             contentContainer.append(contentContainerShop);
             
+            for (const p of products) {
+                createProducts(p);
+            };
+
             // Product div start
-            const productItem1 = document.createElement('div');
-            productItem1.classList.add('product-item');
-            contentContainerShop.append(productItem1);
 
-
-
-            const productPicture = document.createElement('div');
-            productPicture.classList.add('product-item-picture');
-            productItem1.append(productPicture);
-
-            const imageElement = document.createElement('img');
-            imageElement.src = 'images/americano.jpg'
-            productPicture.append(imageElement);
-
-            const productInfo = document.createElement('div');
-            productInfo.classList.add('product-item-info');
-            productItem1.append(productInfo);
-
-            const productName = document.createElement('div');
-            productName.classList.add('product-item-name');
-            productName.textContent = "Americano";
-            productInfo.append(productName);
-
-            const productPrice = document.createElement('div');
-            productPrice.classList.add('product-item-price');
-            productPrice.textContent = '$2'
-            productInfo.append(productPrice);
             // Product div end
         
 
@@ -159,6 +177,35 @@ function generateDOM() {
             setTimeout(() => {
                 contentContainerShop.classList.remove('hide');
             }, 0);
+            
+
+            function createProducts(productDetails) {
+                const productItem = document.createElement('div');
+                productItem.classList.add('product-item');
+                contentContainerShop.append(productItem);
+    
+                const productPicture = document.createElement('div');
+                productPicture.classList.add('product-item-picture');
+                productItem.append(productPicture);
+    
+                const imageElement = document.createElement('img');
+                imageElement.src = productDetails.image;
+                productPicture.append(imageElement);
+    
+                const productInfo = document.createElement('div');
+                productInfo.classList.add('product-item-info');
+                productItem.append(productInfo);
+    
+                const productName = document.createElement('div');
+                productName.classList.add('product-item-name');
+                productName.textContent = productDetails.name;
+                productInfo.append(productName);
+    
+                const productPrice = document.createElement('div');
+                productPrice.classList.add('product-item-price');
+                productPrice.textContent = productDetails.price;
+                productInfo.append(productPrice);
+            }
         }
     }
 
