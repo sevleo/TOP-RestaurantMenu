@@ -1,4 +1,8 @@
 import Americano from './images/americano.jpg';
+
+const myAmericano = new Image();
+myAmericano.src = Americano;
+
 import ChocolateCoffee from './images/chocolate_coffee.jpg';
 import Croissant from './images/croissant.jpg';
 import IceEspresso from './images/ice_espresso.jpg';
@@ -7,7 +11,7 @@ import Sandwich from './images/sandwich.jpg';
 
 const products = [
     {
-        image: Americano,
+        image: myAmericano.src,
         name: 'Americano',
         price: '$2',
     },
@@ -17,7 +21,7 @@ const products = [
         price: '$2.5',
     },
     {
-        image: Croissant,
+        image: IceEspresso,
         name: 'Ice Espresso',
         price: '$2.5',
     },
