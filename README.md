@@ -2,6 +2,10 @@ change content-container to flex and align child elements in center
 add list of objects to store information about products
 create function to create div elements and iterate through the list to create all the elements
 
+Preview
+https://sevleo.github.io/restaurant_page/
+
+
 
 
 Background image credit:

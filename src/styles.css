@@ -402,6 +402,10 @@ html {
             background-color: rgba(20, 20, 20, 0.8);
     }
 
+    .content-container > div.hide {
+        opacity: 0;
+    }
+
     .content-container {
         padding: clamp(10px, 15vh, 50px) 20px 10px 20px;
         color: white;
@@ -459,7 +463,6 @@ html {
 
     .shop {
         margin: 30px
-
     }
 
 }
