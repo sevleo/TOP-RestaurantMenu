@@ -256,8 +256,37 @@ html {
     margin-bottom: 30px;
     }
 
+    .product-item {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        width: 100%;
+    }
+
+    .product-item-info {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        width: 50%;
+        gap: 15px;
+    }
+
+    .product-item-name,
+    .product-item-price {
+        text-align: center;
+        font-size: clamp(1rem, 3vw, 4rem);
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .product-item-name {
+        border-bottom: 0.5px white solid;
+    }
+
     .product-item-picture {
-        width: 350px;
+        width: 50%;
         height: auto;
         overflow: hidden;
     }

@@ -121,13 +121,12 @@ function generateDOM() {
             contentContainerShop.classList.add('shop', 'hide');
             contentContainer.append(contentContainerShop);
             
+            // Product div start
             const productItem1 = document.createElement('div');
             productItem1.classList.add('product-item');
             contentContainerShop.append(productItem1);
 
-            const productName = document.createElement('div');
-            productName.classList.add('product-item-name');
-            productItem1.append(productName);
+
 
             const productPicture = document.createElement('div');
             productPicture.classList.add('product-item-picture');
@@ -137,9 +136,20 @@ function generateDOM() {
             imageElement.src = 'images/americano.jpg'
             productPicture.append(imageElement);
 
+            const productInfo = document.createElement('div');
+            productInfo.classList.add('product-item-info');
+            productItem1.append(productInfo);
+
+            const productName = document.createElement('div');
+            productName.classList.add('product-item-name');
+            productName.textContent = "Americano";
+            productInfo.append(productName);
+
             const productPrice = document.createElement('div');
             productPrice.classList.add('product-item-price');
-            productItem1.append(productPrice);
+            productPrice.textContent = '$2'
+            productInfo.append(productPrice);
+            // Product div end
         
 
             deleteHomeDiv();
