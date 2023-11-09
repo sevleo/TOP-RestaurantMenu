@@ -94,7 +94,7 @@ function generateDOM() {
     
     const menuItem4 = document.createElement('div');
     menuItem4.classList.add('menu-item');
-    menuItem4.textContent = 'Contact Us';
+    menuItem4.textContent = 'Contact';
     menuItems.append(menuItem4);
     menuItem4.addEventListener('click', () => {
         createContactUsDiv();

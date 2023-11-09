@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 html {
@@ -29,9 +30,22 @@ html {
     background: #555; /* Change the color to your preference */
 }
 
+
 /* Desktop screen */
 
 @media (min-width: 800px) {
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(20, 20, 20);
+        overflow-x: hidden;
+    }
+
+    #main {
+        width: 100%;
+        height: 100%;
+    }
 
     .background-image {
         background-image: url('images/rizky-subagja-1k7TnX5GAww-unsplash.jpg');
@@ -212,44 +226,35 @@ html {
         display: flex;
     }
 
-
     .content-container > div {
-        /* width: 400px; */
         transition: opacity 1s ease-out;
         opacity: 1;
         transform: translateX(0%);
         box-shadow: 0px 0px 100px 50px rgba(20,20,20,1);
-        /* box-shadow: inset 0px 0px 100px 100px rgba(20,20,20,0.7),
-                    0px 0px 100px 100px rgba(20,20,20,0.7); */
         height: fit-content;
+        width: 100%;
+        padding: 15px;
+
+
+        --b: 0.5px; /* thickness of the border */
+        --c: rgb(255, 255, 255); /* color of the border */
+        --w: 100px; /* width of border */
+        
+        border: var(--b) solid #0000;
+        --_g: #0000 90deg,var(--c) 0;
+        --_p: var(--w) var(--w) border-box no-repeat;
+        background:
+            conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
+            conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
+            conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
+            conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+            
+            background-color: rgba(20, 20, 20, 0.8);
     }
+
 
     .content-container > div.hide {
         opacity: 0;
-        /* transform: translateX(200%); */
-    }
-
-    .content-container > div {
-    /* position: absolute; */
-    width: 100%;
-    /* left: 50%;
-    top: 50%; */
-    /* transform: translate(-50%, -50%); */
-    padding: 15px;
-    --b: 0.5px; /* thickness of the border */
-    --c: rgb(255, 255, 255); /* color of the border */
-    --w: 100px; /* width of border */
-    
-    border: var(--b) solid #0000;
-    --_g: #0000 90deg,var(--c) 0;
-    --_p: var(--w) var(--w) border-box no-repeat;
-    background:
-        conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
-        conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
-        conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
-        conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
-        
-        background-color: rgba(20, 20, 20, 0.8);
     }
 
     .home p:first-child {
@@ -262,6 +267,153 @@ html {
         align-content: center;
         width: 100%;
         height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .product-item-info {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        width: 50%;
+        gap: 15px;
+    }
+
+    .product-item-name,
+    .product-item-price {
+        text-align: center;
+        font-size: clamp(1rem, 2.5vw, 4rem);
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .product-item-name {
+        border-bottom: 0.5px white solid;
+    }
+
+    .product-item-picture {
+        width: 50%;
+        height: auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-item-picture img {
+        max-width: 50%;
+        /* max-height: 100%; */
+        border-radius: 15px;
+        height: auto;
+        box-shadow: 0px 0px 1px 1px rgb(255, 255, 255);
+        /* height: auto; */
+    }
+
+}
+
+
+/* Mobile screen */
+
+@media (max-width: 800px) {
+
+    body {
+        height: calc(100vh - 80px);
+    }
+
+    .background-image {
+        background-image: url('images/rizky-subagja-1k7TnX5GAww-unsplash.jpg');
+    }
+
+
+    #main {
+        height: 100%;
+    }
+
+    .menu {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(20, 20, 20);
+        z-index: 5;
+        width: 100%;
+        height: 80px;
+        top: 0;
+        box-shadow: 0px 3px 3px 0px rgba(20,20,20,1);
+    }
+
+    .menu-items {
+        display: flex;
+        color: white;
+        width: 100%;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .menu-item {
+        z-index: 1;
+        flex: 1 1 0;
+        text-align: center;
+
+    }
+
+    .menu-items > div:not(:last-child) {
+        border-right: 0.5px solid white;
+    }
+
+    .content {
+        height: fit-content;
+        margin-top: 80px;
+    }
+
+    .content-container {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .content-container > div {
+        transition: opacity 1s ease-out;
+        opacity: 1;
+        transform: translateX(0%);
+        box-shadow: 0px 0px 100px 50px rgba(20,20,20,1);
+        height: fit-content;
+        width: 80%;
+        max-width: 550px;
+        padding: 15px;
+
+
+        --b: 0.5px; /* thickness of the border */
+        --c: rgb(255, 255, 255); /* color of the border */
+        --w: 50px; /* width of border */
+        
+        border: var(--b) solid #0000;
+        --_g: #0000 90deg,var(--c) 0;
+        --_p: var(--w) var(--w) border-box no-repeat;
+        background:
+            conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
+            conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
+            conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
+            conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+            
+            background-color: rgba(20, 20, 20, 0.8);
+    }
+
+    .content-container {
+        padding: clamp(10px, 15vh, 50px) 20px 10px 20px;
+        color: white;
+        z-index: 2;
+    }
+
+    .product-item {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        width: 100%;
+        height: 150px;
         margin-bottom: 20px;
     }
 
@@ -297,23 +449,17 @@ html {
     }
 
     .product-item-picture img {
-        max-width: 50%;
-        /* max-height: 100%; */
+        max-width: 65%;
+        max-height: 140px;
         border-radius: 15px;
         height: auto;
         box-shadow: 0px 0px 1px 1px rgb(255, 255, 255);
         /* height: auto; */
     }
 
-}
+    .shop {
+        margin: 30px
 
-
-/* Mobile screen */
-
-@media (max-width: 800px) {
-
-    .background-image {
-        background-image: url('images/rizky-subagja-1k7TnX5GAww-unsplash.jpg');
     }
 
 }
@@ -323,14 +469,8 @@ html {
 
 body {
     width: 100vw;
-    height: 100vh;
     background-color: rgba(20, 20, 20);
     overflow-x: hidden;
-}
-
-#main {
-    width: 100%;
-    height: 100%;
 }
 
 .background-image {
