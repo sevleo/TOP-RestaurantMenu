@@ -1,38 +1,38 @@
-const productDetails = {
-    image: 'images/americano.jpg',
-    name: 'Americano',
-    price: '$2',
-}
-
+import Americano from './images/americano.jpg';
+import ChocolateCoffee from './images/chocolate_coffee.jpg';
+import Croissant from './images/croissant.jpg';
+import IceEspresso from './images/ice_espresso.jpg';
+import Latte from './images/latte.jpg';
+import Sandwich from './images/sandwich.jpg';
 
 const products = [
     {
-        image: 'images/americano.jpg',
+        image: Americano,
         name: 'Americano',
         price: '$2',
     },
     {
-        image: 'images/chocolate_coffee.jpg',
+        image: ChocolateCoffee,
         name: 'Chocolate Coffee',
         price: '$2.5',
     },
     {
-        image: 'images/ice_espresso.jpg',
+        image: Croissant,
         name: 'Ice Espresso',
         price: '$2.5',
     },
     {
-        image: 'images/latte.jpg',
+        image: Latte,
         name: 'Hot Latte',
         price: '$2.5',
     },
     {
-        image: 'images/sandwich.jpg',
+        image: Sandwich,
         name: 'Ham Sandwich',
         price: '$3.25',
     },
     {
-        image: 'images/croissant.jpg',
+        image: Croissant,
         name: 'Croissant',
         price: '$2.25',
     }
@@ -296,7 +296,6 @@ function generateDOM() {
         }
     }
 }
-
 
 
 export {generateDOM};
