@@ -11,15 +11,23 @@ The page is fully responsive for desktop and mobile views in Safari and Chrome b
 ## Table of Contents
 
 - [Demo](#demo)
+- [Technologies used](#technologies)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgements](#Acknowledgements)
 
 
-
 ## Demo
 
 You can view the project at [Restaurang Page Demo](https://sevleo.github.io/restaurant_page/).
+
+
+## Technologies
+
+- Vanilla JS
+- CSS
+- HTML (boilerplate only)
+- Webpack
 
 
 ## Contributing
@@ -39,7 +47,7 @@ You can view the project at [Restaurang Page Demo](https://sevleo.github.io/rest
 
 
  ## Acknowledgements
- 
+
 Background image credit:
 Rizky Subagja
 https://unsplash.com/photos/two-clear-drinking-glasses-on-top-of-brown-wooden-table-1k7TnX5GAww
