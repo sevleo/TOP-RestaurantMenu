@@ -14,27 +14,27 @@ const products = [
     {
         image: 'images/chocolate_coffee.jpg',
         name: 'Chocolate Coffee',
-        price: '$3',
+        price: '$2.5',
     },
     {
         image: 'images/ice_espresso.jpg',
         name: 'Ice Espresso',
-        price: '$3',
+        price: '$2.5',
     },
     {
         image: 'images/latte.jpg',
         name: 'Hot Latte',
-        price: '$3',
+        price: '$2.5',
     },
     {
         image: 'images/sandwich.jpg',
         name: 'Ham Sandwich',
-        price: '$3',
+        price: '$3.25',
     },
     {
         image: 'images/croissant.jpg',
         name: 'Croissant',
-        price: '$3',
+        price: '$2.25',
     }
 ]
 
